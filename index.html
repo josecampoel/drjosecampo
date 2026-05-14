@@ -116,6 +116,75 @@
     .btn-ghost:hover { background: var(--green-light); }
 
     .hero-right { position: relative; z-index: 1; }
+    /* ── HERO IMAGE ── */
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+.hero-bg-circle{
+  position:absolute;
+  width:560px;
+  height:560px;
+  border-radius:50%;
+  background: radial-gradient(circle at center,
+  rgba(29,158,117,0.18) 0%,
+  rgba(29,158,117,0.08) 45%,
+  transparent 72%);
+  bottom:60px;
+  z-index:1;
+}
+
+.hero-doctor{
+  position:relative;
+  z-index:2;
+  height:700px;
+  object-fit:contain;
+  filter:
+    drop-shadow(0 24px 40px rgba(0,0,0,0.12));
+  animation: floatDoctor 5s ease-in-out infinite;
+}
+
+@keyframes floatDoctor{
+  0%{
+    transform:translateY(0px);
+  }
+  50%{
+    transform:translateY(-10px);
+  }
+  100%{
+    transform:translateY(0px);
+  }
+}
+
+.floating-card{
+  position:absolute;
+  z-index:3;
+  background:rgba(255,255,255,0.88);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.5);
+  box-shadow:0 12px 32px rgba(0,0,0,0.08);
+  border-radius:18px;
+  padding:12px 18px;
+  font-size:13px;
+  font-weight:600;
+  color:var(--green-dark);
+}
+
+.card-1{
+  top:120px;
+  left:20px;
+}
+
+.card-2{
+  top:300px;
+  right:10px;
+}
+
+.card-3{
+  bottom:120px;
+  left:40px;
+}
     .specs-card {
       background: var(--white); border-radius: var(--radius-xl);
       border: 1px solid var(--border); padding: 28px;
@@ -289,7 +358,23 @@
       nav { padding: 0 20px; }
       .nav-links { display: none; }
       .hero { grid-template-columns: 1fr; padding: 40px 20px; min-height: auto; }
-      .hero-right { display: none; }
+      ..hero-right{
+  display:flex;
+  justify-content:center;
+}
+
+.hero-image-wrap{
+  height:auto;
+  margin-top:20px;
+}
+
+.hero-doctor{
+  height:420px;
+}
+
+.floating-card{
+  display:none;
+}
       .section { padding: 56px 20px; }
       .pato-grid { grid-template-columns: 1fr; }
       .como-inner { grid-template-columns: 1fr; }
@@ -335,14 +420,29 @@
         <a href="#como" class="btn-ghost">Cómo trabajo</a>
       </div>
     </div>
-    <div class="hero-right fade-in">
-      <div class="specs-card">
-        <div class="specs-title">Áreas de atención</div>
-        <div class="spec-item">
-          <div class="spec-icon" style="background:#E1F5EE;">🌙</div>
-          <div class="spec-info">
-            <div class="spec-name">Medicina del sueño</div>
-            <div class="spec-sub">Insomnio · Ronquidos · Somnolencia</div>
+  <div class="hero-right fade-in">
+
+  <div class="hero-image-wrap">
+
+    <div class="hero-bg-circle"></div>
+    
+    <img
+      src="foto-hero.jpg"
+      alt="Dr. José Campo"
+      class="hero-doctor"
+    />
+    
+    <div class="floating-card card-1">
+      <span>🌙 Medicina del sueño</span>
+    </div>
+    <div class="floating-card card-2">
+      <span>🩺 Atención integral</span>
+    </div>
+    <div class="floating-card card-3">
+      <span>💻 Consulta virtual</span>
+    </div>
+  </div>
+</div>
           </div>
           <div class="spec-tag" style="background:#E1F5EE; color:#085041;"></div>
         </div>
