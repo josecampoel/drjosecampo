@@ -116,98 +116,99 @@
     .btn-ghost:hover { background: var(--green-light); }
 
     .hero-right { position: relative; z-index: 1; }
-    /* ── HERO IMAGE ── */
+  /* ── HERO IMAGE CLEAN ── */
+
+.hero-right{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.hero-image-wrap{
+  position:relative;
+  height:720px;
+  width:100%;
   display:flex;
   align-items:flex-end;
   justify-content:center;
 }
 
-.hero-bg-circle{
+.hero-glow{
   position:absolute;
-  width:560px;
-  height:560px;
+  width:520px;
+  height:520px;
   border-radius:50%;
-  background: radial-gradient(circle at center,
-  rgba(29,158,117,0.18) 0%,
-  rgba(29,158,117,0.08) 45%,
-  transparent 72%);
-  bottom:60px;
+
+  background:radial-gradient(
+    circle,
+    rgba(29,158,117,0.16) 0%,
+    rgba(29,158,117,0.05) 45%,
+    transparent 75%
+  );
+
+  bottom:80px;
   z-index:1;
 }
 
 .hero-doctor{
   position:relative;
   z-index:2;
+
   height:700px;
+  max-width:100%;
   object-fit:contain;
-  filter:
-    drop-shadow(0 24px 40px rgba(0,0,0,0.12));
-  animation: floatDoctor 5s ease-in-out infinite;
+
+  filter:drop-shadow(
+    0 20px 40px rgba(0,0,0,0.12)
+  );
 }
 
-@keyframes floatDoctor{
-  0%{
-    transform:translateY(0px);
-  }
-  50%{
-    transform:translateY(-10px);
-  }
-  100%{
-    transform:translateY(0px);
-  }
-}
-
-.floating-card{
+.hero-mini-card{
   position:absolute;
+  bottom:90px;
+  right:20px;
   z-index:3;
+
+  display:flex;
+  align-items:center;
+  gap:14px;
+
   background:rgba(255,255,255,0.88);
   backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,0.5);
-  box-shadow:0 12px 32px rgba(0,0,0,0.08);
-  border-radius:18px;
-  padding:12px 18px;
-  font-size:13px;
+
+  border:1px solid rgba(255,255,255,0.6);
+
+  padding:16px 18px;
+  border-radius:22px;
+
+  box-shadow:0 14px 40px rgba(0,0,0,0.08);
+}
+
+.mini-icon{
+  width:42px;
+  height:42px;
+  border-radius:14px;
+
+  background:var(--green-light);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:20px;
+}
+
+.mini-title{
+  font-size:14px;
   font-weight:600;
-  color:var(--green-dark);
+  color:var(--text-primary);
 }
 
-.card-1{
-  top:120px;
-  left:20px;
+.mini-sub{
+  font-size:12px;
+  color:var(--text-secondary);
+  margin-top:2px;
 }
-
-.card-2{
-  top:300px;
-  right:10px;
-}
-
-.card-3{
-  bottom:120px;
-  left:40px;
-}
-    .specs-card {
-      background: var(--white); border-radius: var(--radius-xl);
-      border: 1px solid var(--border); padding: 28px;
-      box-shadow: 0 12px 48px rgba(10,94,72,0.08);
-    }
-    .specs-title { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 18px; }
-    .spec-item {
-      display: flex; align-items: center; gap: 14px;
-      padding: 12px 0; border-bottom: 1px solid var(--border);
-    }
-    .spec-item:last-child { border-bottom: none; }
-    .spec-icon {
-      width: 38px; height: 38px; border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px; flex-shrink: 0;
-    }
-    .spec-info { flex: 1; }
-    .spec-name { font-size: 14px; font-weight: 500; color: var(--text-primary); }
-    .spec-sub { font-size: 12px; color: var(--text-secondary); margin-top: 1px; }
-    .spec-tag {
-      font-size: 11px; padding: 3px 10px; border-radius: 100px; font-weight: 500;
-    }
-
     /* ── SECTION BASE ── */
     .section { padding: 80px 48px; }
     .section-label {
@@ -401,91 +402,54 @@
     <a href="https://wa.me/3023642889" class="nav-cta">Agenda tu cita</a>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left fade-in">
-      <div class="hero-badge">
-        <div class="badge-dot"></div>
-        Médico general · Barranquilla · Consulta presencial y virtual
-      </div>
-      <h1 class="hero-title">
-        Tu cuerpo te habla.<br>
-        <em>¿Lo estás escuchando?</em>
-      </h1>
-      <p class="hero-sub">
-        Síntomas que llevas años normalizando pueden tener causa y tratamiento. Aquí te ayudo a entender qué está pasando — sin tecnicismos y sin largas listas de espera.
-      </p>
-      <div class="hero-btns">
-        <a href="#patologias" class="btn-primary">¿Qué me está pasando?</a>
-        <a href="#como" class="btn-ghost">Cómo trabajo</a>
-      </div>
+ <!-- HERO -->
+<section class="hero">
+  <div class="hero-left fade-in">
+    <div class="hero-badge">
+      <div class="badge-dot"></div>
+      Médico general · Barranquilla · Consulta presencial y virtual
     </div>
-  <div class="hero-right fade-in">
-
-  <div class="hero-image-wrap">
-
-    <div class="hero-bg-circle"></div>
-    
-    <img
-      src="foto-hero.png"
-      alt="Dr. José Campo"
-      class="hero-doctor"
-    />
-    
-    <div class="floating-card card-1">
-      <span>🌙 Medicina del sueño</span>
-    </div>
-    <div class="floating-card card-2">
-      <span>🩺 Atención integral</span>
-    </div>
-    <div class="floating-card card-3">
-      <span>💻 Consulta virtual</span>
+    <h1 class="hero-title">
+      Tu cuerpo te habla.<br>
+      <em>¿Lo estás escuchando?</em>
+    </h1>
+    <p class="hero-sub">
+      Síntomas que llevas años normalizando pueden tener causa y tratamiento.
+      Aquí te ayudo a entender qué está pasando — sin tecnicismos y sin largas listas de espera.
+    </p>
+    <div class="hero-btns">
+      <a href="#patologias" class="btn-primary">
+        ¿Qué me está pasando?
+      </a>
+      <a href="#como" class="btn-ghost">
+        Cómo trabajo
+      </a>
     </div>
   </div>
-</div>
-          </div>
-          <div class="spec-tag" style="background:#E1F5EE; color:#085041;"></div>
+  <div class="hero-right fade-in">
+    <div class="hero-image-wrap">
+      <div class="hero-glow"></div>
+      <img
+        src="foto-hero.png"
+        alt="Dr. José Campo"
+        class="hero-doctor"
+      />
+      <div class="hero-mini-card">
+        <div class="mini-icon">
+          🩺
         </div>
-        <div class="spec-item">
-          <div class="spec-icon" style="background:#EEEDFE;">🫁</div>
-          <div class="spec-info">
-            <div class="spec-name">Salud gastrointestinal</div>
-            <div class="spec-sub">Reflujo · Colon irritable · Gastritis</div>
+        <div>
+          <div class="mini-title">
+            Atención integral
           </div>
-          <div class="spec-tag" style="background:#EEEDFE; color:#26215C;"></div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-icon" style="background:#FBEAF0;">❤️</div>
-          <div class="spec-info">
-            <div class="spec-name">Salud sexual</div>
-            <div class="spec-sub">Hormonas · Disfunción · Bienestar</div>
-          </div>
-          <div class="spec-tag" style="background:#FBEAF0; color:#4B1528;"></div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-icon" style="background:#FAECE7;">🧠</div>
-          <div class="spec-info">
-            <div class="spec-name">Migraña y cefalea</div>
-            <div class="spec-sub">Crónica · Episódica · Preventiva</div>
-          </div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-icon" style="background:#EAF3DE;">🏃</div>
-          <div class="spec-info">
-            <div class="spec-name">Medicina del deporte</div>
-            <div class="spec-sub">Lesiones · Rendimiento · Recuperación</div>
-          </div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-icon" style="background:#1D7C6C;">💊</div>
-          <div class="spec-info">
-            <div class="spec-name">Enfermedades crónicas</div>
-            <div class="spec-sub">Diabetes · Hipertensión · tiroides</div>
+          <div class="mini-sub">
+            Consulta presencial y virtual
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- PATOLOGÍAS -->
   <section class="section patologias" id="patologias">
